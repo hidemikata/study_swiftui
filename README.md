@@ -32,6 +32,7 @@ AnyPublisher
 .map：sinkの前にデータ変換する。returnするとsinkに渡る  
 .assign  ：プロパティに値を代入する .map { _ in true } .assign(to: \.isLoading, on: viewController)viewControllerの.isLoadingにtrueを代入する
 .store：subscriptionをバインドしても消えてしまうから変数に入れるというだけ
+.eraseToAnyPublisher()：戻り値を単純化する
 用途：非同期実装は煩雑なコードになるのでこれを使って簡単に書く。swift concurrencyを使うともっとシンプルになる
 
 
