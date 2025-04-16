@@ -35,6 +35,7 @@ AnyPublisher
 .eraseToAnyPublisher()：戻り値を単純化する
 用途：非同期実装は煩雑なコードになるのでこれを使って簡単に書く。swift concurrencyを使うともっとシンプルになる
 
+## Swift Concurrency
 
 
 
