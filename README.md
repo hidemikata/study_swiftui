@@ -48,4 +48,5 @@ sendable スレッド間で渡しても安全だという保証する。キャ�
 ### 4
 classではなくactorで宣言すると複数からアクセスができなくなる。値を渡すときはsendableが必須になる。
 classの宣言に@MainActorをつけるとメインスレッドで動く。await MainActor.run {}でメインスレッドに移すこともできる。
+Task{}←Task構造体で、initに渡すものはないけど、クロージャーだけ渡してる
 
