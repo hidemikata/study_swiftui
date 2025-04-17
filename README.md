@@ -36,6 +36,16 @@ AnyPublisher
 用途：非同期実装は煩雑なコードになるのでこれを使って簡単に書く。swift concurrencyを使うともっとシンプルになる
 
 ## Swift Concurrency
-
-
+### 1
+for await time in timer.values {で非同期待ちループができる。
+AsyncSequenceプロトコルに準拠するとできる。AsyncStreamで既存のコードを非同期にすることも可能。
+### 2
+async letでスコープ内で複数の非同期を待てる。タスクグループという機能もある。
+Task{},Task.detach{}スコープ外で動く。
+エラーの伝搬とかキャンセルの仕方で実装が変わる
+### 3
+sendable スレッド間で渡しても安全だという保証する。キャプチャーとプロトコルがある。swift6ではsendableじゃないとエラー
+### 4
+classではなくactorで宣言すると複数からアクセスができなくなる。値を渡すときはsendableが必須になる。
+classの宣言に@MainActorをつけるとメインスレッドで動く。await MainActor.run {}でメインスレッドに移すこともできる。
 
